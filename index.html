@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavan Manumarri | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #eef2f3, #d9e7ff);
+      color: #333;
+    }
+
+    nav {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0077b5;
+    }
+
+    .nav-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0077b5;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #004d7a;
+    }
+
+    header {
+      text-align: center;
+      padding: 7rem 5rem 2rem;
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('main.jpg');
+      background-size: cover;
+      background-position: right top;
+      color: white;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-top: 3rem;
+    }
+
+    .typing {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #ddd;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #003366;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .skill-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .skill-card.red h3 { background: #e74c3c; }
+    .skill-card.blue h3 { background: #2980b9; }
+    .skill-card.green h3 { background: #27ae60; }
+    .skill-card.purple h3 { background: #8e44ad; }
+    .skill-card.brown h3 { background: brown; }
+
+    .skill {
+      margin-bottom: 10px;
+    }
+
+    .skill span {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bar .fill {
+      height: 100%;
+      width: 0;
+      border-radius: 10px;
+      animation: fillAnim 1s forwards;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 5px;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    @keyframes fillAnim {
+      to { width: var(--fill-width); }
+    }
+
+    .skill-card.red .fill { background: #e74c3c; }
+    .skill-card.blue .fill { background: #2980b9; }
+    .skill-card.green .fill { background: #27ae60; }
+    .skill-card.purple .fill { background: #8e44ad; }
+    .skill-card.brown .fill { background: brown; }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .project {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: #005580;
+    }
+
+    /* Contact */
+    .contact {
+      background: #e6f4f1;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links a {
+      margin: 0 0.5rem;
+      color: #333;
+      font-size: 1.4rem;
+    }
+
+    .btn-resume {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      background: #003366;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-resume:hover {
+      background: #0077b5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Pavan Manumarri</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Hello, I'm Pavan Manumarri</h1>
+    <p class="typing"><strong>Growth-Focused</strong> | <strong>Adaptive Learner</strong> | <strong>Calm & Consistent</strong></p>
+    <img src="photo.jpg" alt="Pavan Manumarri">
+    <a href="pavan_resume.pdf" download class="btn-resume">Download Resume</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Pavan Manumarri, a Master of Computer Applications (MCA) student at Omega P.G. College, currently maintaining a CGPA of 7.5. I'm seeking a career opportunity in the field of Data Analytics, where I can apply my analytical thinking, technical skills, and passion for turning data into actionable insights.
+
+      With a strong interest in data-driven decision-making, I am enthusiastic about exploring emerging technologies and solving real-world problems. Known for being trustworthy and consistent, I am eager to contribute to a collaborative environment, delivering meaningful insights and driving success through data.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card red">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <div class="skill"><span>Python</span><div class="bar"><div class="fill" style="--fill-width: 80%">80%</div></div></div>
+        <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" style="--fill-width: 85%">85%</div></div></div>
+      </div>
+      <div class="skill-card blue">
+        <h3><i class="fas fa-globe"></i> Web Development</h3>
+        <div class="skill"><span>HTML</span><div class="bar"><div class="fill" style="--fill-width: 95%">95%</div></div></div>
+        <div class="skill"><span>CSS</span><div class="bar"><div class="fill" style="--fill-width: 80%">80%</div></div></div>
+      </div>
+      <div class="skill-card green">
+        <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
+        <div class="skill"><span>Power BI</span><div class="bar"><div class="fill" style="--fill-width: 85%">85%</div></div></div>
+        <div class="skill"><span>Excel</span><div class="bar"><div class="fill" style="--fill-width: 80%">80%</div></div></div>
+      </div>
+      <div class="skill-card purple">
+        <h3><i class="fas fa-database"></i> Databases</h3>
+        <div class="skill"><span>MySQL</span><div class="bar"><div class="fill" style="--fill-width: 90%">90%</div></div></div>
+        <div class="skill"><span>MongoDB</span><div class="bar"><div class="fill" style="--fill-width: 85%">85%</div></div></div>
+      </div>
+      <div class="skill-card brown">
+        <h3><i class="fas fa-robot"></i> Artificial Intelligence</h3>
+        <div class="skill"><span>Machine Learning</span><div class="bar"><div class="fill" style="--fill-width: 90%">90%</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Blinkit Sales Analysis</h3>
+        <p>Developed an interactive Power BI dashboard to analyze Blinkit's sales data, offering insights into 
+          product performance, sales trends, and customer preferences. Utilized DAX and data modeling to 
+          optimize inventory management and sales strategies.</p>
+      </div>
+      <div class="project">
+        <h3>Coffee Shop Sales Dashboard</h3>
+        <p>Developed an interactive Power BI dashboard to analyze hourly, daily, and monthly sales 
+          trends, compare weekday vs. weekend sales, and track product-wise and store-wise 
+          performance. Included last-month vs. current-month comparisons to visualize sales growth 
+          and key business insights.</p>
+      </div>
+      <div class="project">
+        <h3>Diabetes Prediction</h3>
+        <p>Preprocessed and analyzed clinical data (age, BMI, glucose levels) to predict diabetes risk. 
+          Applied EDA, handled missing values, and optimized models using accuracy, precision, and 
+          ROC analysis. Visualized key insights with Matplotlib and Seaborn for effective decision-
+          making. </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p><i class="fa-solid fa-envelope"></i> pavanmanumarri@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i> +91 9505009071</p>
+    <div class="social-links">
+      <a href="https://github.com/pavanpavan16" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pavan-manumarri-48681832a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pavan Manumarri. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
